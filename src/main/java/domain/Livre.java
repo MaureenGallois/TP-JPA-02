@@ -28,4 +28,12 @@ public class Livre {
 
     public Livre(){
     }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
+    }
 }
