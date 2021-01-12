@@ -38,6 +38,14 @@ public class App {
         Livre newSelectLivre = newSelectQuery.getResultList().get(0);
         System.out.println(newSelectLivre);
 
+        //Afficher la liste de tous les livres présents en base de données (titre et auteur).
+        TypedQuery<Livre> selectAllQuery = em.createQuery("select l from Livre l", Livre.class);
+        int selectAllLivre = selectAllQuery.getResultList().size();
+        Livre l;
+        for(int i = 0; i<=selectAllLivre; i++) {
+            System.out.println(l=selectAllQuery.getResultList().get(i));
+        }
+
 
         //recherche d'un livre par son id
         Livre findLivre = em.find(Livre.class, 5);
