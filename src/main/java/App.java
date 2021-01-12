@@ -33,6 +33,12 @@ public class App {
         Livre selectLivre = selectQuery.getResultList().get(0);
         System.out.println(selectLivre);
 
+        //Faire une requête JPQL pour extraire de la base un livre en fonction de son auteur
+        TypedQuery<Livre> newSelectQuery = em.createQuery("select l from Livre l where l.auteur ='Léon Tolstoï'", Livre.class);
+        Livre newSelectLivre = newSelectQuery.getResultList().get(0);
+        System.out.println(newSelectLivre);
+
+
         //recherche d'un livre par son id
         Livre findLivre = em.find(Livre.class, 5);
         System.out.println(findLivre);
