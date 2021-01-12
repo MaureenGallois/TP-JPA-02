@@ -16,9 +16,15 @@ public class App {
         em.persist(newLivre);
 
         //modification d'un livre
-        Livre livre = em.find(Livre.class, 5);
-        if(livre != null){
-            livre.setTitre("Du plaisir dans la cuisine");
+        Livre changelivre = em.find(Livre.class, 5);
+        if(changelivre != null){
+            changelivre.setTitre("Du plaisir dans la cuisine");
+        }
+
+        //suppression d'un livre
+        Livre deleteLivre = em.find(Livre.class, 7);
+        if(deleteLivre != null){
+            em.remove(deleteLivre);
         }
 
         //recherche d'un livre par son id
