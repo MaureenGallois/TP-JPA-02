@@ -1,15 +1,17 @@
 package domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="LIVRE")
 public class Livre {
     @Id
     private int id;
+
+    @ManyToMany(mappedBy = "livres")
+    private Set<Emprunt> emprunts;
 
     @Column(name="TITRE", length = 100, nullable = false)
     private String titre;
