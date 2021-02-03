@@ -19,7 +19,7 @@ public class App {
         //modification d'un livre
         Livre changelivre = em.find(Livre.class, 5);
         if(changelivre != null){
-            changelivre.setTitre("Du plaisir dans la cuisine");
+            changelivre.setTitre("Du plisir dans la cuisine");
         }
 
         //suppression d'un livre
